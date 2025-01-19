@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-![](/preview/webSite.png)
+![](/preview/webSite.jpg)
 
 
 First, run the development server:
