@@ -29,7 +29,7 @@ export default function Home() {
   const arrayModelYears = useMemo(() => {
     const initialYear = 2015;
     const finalYear = new Date().getFullYear();
-    let newArrayYears = [];
+    const newArrayYears = [];
 
     for (let year = initialYear; year <= finalYear; year++) {
       newArrayYears.push(year);
@@ -53,7 +53,7 @@ export default function Home() {
   const isDisabledNextBtn = useMemo(() => (selectedVehicleMakeID == initialSelectValue || selectedModelYear == initialSelectValue), [selectedVehicleMakeID, selectedModelYear])
 
   function searchVehicle() {
-    redirect(`result/${selectedVehicleMakeID}/${selectedModelYear}`);
+    redirect(`result/${selectedVehicleMakeID}/${selectedModelYear}/`);
   }
 
   return (
@@ -83,7 +83,7 @@ export default function Home() {
             <div className="tw-flex tw-flex-col tw-gap-4 md:tw-grid md:tw-grid-cols-4">
 
               <select name="vehicleMakes" id="vehicleMakes" defaultValue={initialSelectValue} className="tw-col-span-2 !tw-text-customDarkBlue" onChange={(event) => changeSelectedVehicleMakeID(event.target.value)}>
-                <option value={initialSelectValue}>Select the vehicle make *</option>
+                <option value={initialSelectValue}>{vehicleMakes.length > 0 ? "Select the vehicle make *" : "Loading vehicles..."} </option>
                 {vehicleMakes.map((children, keyChildren) => (
                   <option value={children.MakeId} key={keyChildren}>{children.MakeName}</option>
                 ))}

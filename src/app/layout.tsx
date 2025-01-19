@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import { Suspense } from 'react';
-import LoadingPage from '@/components/LoadingPage';
+import LoadingPage from '@/app/loading';
 
 const InterFont = Inter({
   variable: '--font-inter',
@@ -26,7 +26,7 @@ export default function RootLayout({
         <Header />
           <main className="tw-flex tw-w-full tw-flex-col tw-items-stretch tw-justify-center">
             <Suspense fallback={<LoadingPage />}>
-            {children}
+            { children }
             </Suspense>
           </main>
       </body>
