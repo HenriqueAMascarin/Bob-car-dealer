@@ -16,7 +16,7 @@
 
 ### Screenshot
 
-![](public/preview/website.jpg)
+![](public/preview/websitePreview.jpg)
 
 ### Features
 
