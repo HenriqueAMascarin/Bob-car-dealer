@@ -13,6 +13,6 @@ export default function Button(buttonProperties: ButtonType) {
     }
 
     return (
-        <button onClick={() => redirectPage(buttonProperties.url)} {...buttonProperties} className={`tw-bg-customBlue tw-w-full tw-text-white tw-rounded-[10px] tw-font-bold tw-text-[18px] disabled:tw-cursor-not-allowed ${buttonProperties.className}`} >{buttonProperties.label}</button>
+        <button onClick={() => redirectPage(buttonProperties.url)} {...buttonProperties} className={`tw-bg-customBlue tw-w-full tw-text-white tw-rounded-[10px] tw-font-bold tw-text-[18px] disabled:tw-cursor-not-allowed disabled:tw-bg-customWeakGray ${buttonProperties.className}`} >{buttonProperties.label}</button>
     );
 }

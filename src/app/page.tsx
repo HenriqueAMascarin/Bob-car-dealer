@@ -53,7 +53,9 @@ export default function Home() {
   const isDisabledNextBtn = useMemo(() => (selectedVehicleMakeID == initialSelectValue || selectedModelYear == initialSelectValue), [selectedVehicleMakeID, selectedModelYear])
 
   function searchVehicle() {
-    redirect(`result/${selectedVehicleMakeID}/${selectedModelYear}/`);
+    const vehicleMakeName = vehicleMakes.find((children) => children.MakeId.toString() == selectedVehicleMakeID)?.MakeName;
+
+    redirect(`result/${selectedVehicleMakeID}/${selectedModelYear}/${vehicleMakeName}`);
   }
 
   return (
