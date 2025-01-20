@@ -29,7 +29,7 @@
 
 - The pages are in the app folder in src, and have a Architecture like a url of the website.
 - It has a components folder in the src.
-- It has a public folder that contains the images folder and the preview folder.
+- It has a public folder that contains the images folder (with a svg folder), and the preview folder.
 - In the root of the project, there are files with configurations like tailwind.config.ts.
 
 ### Instructions
