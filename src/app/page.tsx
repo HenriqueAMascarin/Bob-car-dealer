@@ -86,14 +86,14 @@ export default function Home() {
           <Form action={searchVehicle}>
             <div className="tw-flex tw-flex-col tw-gap-4 md:tw-grid md:tw-grid-cols-4">
 
-              <select name="vehicleMakes" id="vehicleMakes" defaultValue={initialSelectValue} className="tw-col-span-2 !tw-text-customDarkBlue" onChange={(event) => changeSelectedVehicleMakeID(event.target.value)}>
+              <select name="vehicleMakes" id="vehicleMakes" defaultValue={initialSelectValue} className="tw-col-span-2 !tw-text-customDarkBlue tw-rounded-sm" onChange={(event) => changeSelectedVehicleMakeID(event.target.value)}>
                 <option value={initialSelectValue}>{vehicleMakes.length > 0 ? "Select the vehicle make *" : "Loading vehicles..."} </option>
                 {vehicleMakes.map((children, keyChildren) => (
                   <option value={children.MakeId} key={keyChildren}>{children.MakeName}</option>
                 ))}
               </select>
 
-              <select name="modelYear" id="modelYear" defaultValue={initialSelectValue} className="tw-col-span-2 !tw-text-customDarkBlue" onChange={(event) => changeSelectedModelYear(event.target.value)}>
+              <select name="modelYear" id="modelYear" defaultValue={initialSelectValue} className="tw-col-span-2 !tw-text-customDarkBlue tw-rounded-sm" onChange={(event) => changeSelectedModelYear(event.target.value)}>
                 <option value={initialSelectValue}>Select the model year *</option>
                 {arrayModelYears.map((year, keyChildren) => (
                   <option value={year} key={keyChildren}>{year}</option>
