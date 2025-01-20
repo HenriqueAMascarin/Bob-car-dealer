@@ -1,10 +1,8 @@
 import Button from "@/components/Button";
 import Container from "@/components/Container";
-import Loading from "@/app/loading";
 import axios from "axios";
-import { Suspense } from "react";
 
-type ParamsType = { makeId: string, year: string,  makeName: string}
+type ParamsType = { makeId: string, year: string, makeName: string }
 
 type RequestType = {
     Results: {
@@ -32,26 +30,24 @@ export default async function Page({ params }: {
     const haveVehicleMakes = vehicleMakesData.length > 0;
 
     return (
-        <Suspense fallback={<Loading />}>
-            <section>
-                <Container>
-                    <h1 className="tw-mt-10">MAKE {makeName} <span className="tw-block">MODEL YEAR {year}</span></h1>
+        <section>
+            <Container>
+                <h1 className="tw-mt-10">MAKE {makeName} <span className="tw-block">MODEL YEAR {year}</span></h1>
 
-                    <article className="tw-text-start tw-max-w-[500px] tw-w-full tw-mx-auto tw-mt-10">
-                        <h2 className="tw-text-customWeakDarkBlue">Vehicle models: {!haveVehicleMakes && "Not found"}</h2>
+                <article className="tw-text-start tw-max-w-[500px] tw-w-full tw-mx-auto tw-mt-10">
+                    <h2 className="tw-text-customWeakDarkBlue">Vehicle models: {!haveVehicleMakes && "Not found"}</h2>
 
-                        <div className="tw-flex tw-flex-col tw-items-stretch tw-justify-center tw-gap-4 tw-mt-2 tw-text-white tw-font-semibold">
-                            {vehicleMakesData.map((vehicleMakes, keyChildren) => {
-                                return (
-                                    <div className="tw-bg-customWeakDarkBlue tw-rounded-[10px] tw-px-3 tw-py-1" key={keyChildren}><p>{vehicleMakes.Model_Name} • {`Make ${vehicleMakes.Make_Name}`} • {year}</p></div>
-                                )
-                            })}
-                        </div>
+                    <div className="tw-flex tw-flex-col tw-items-stretch tw-justify-center tw-gap-4 tw-mt-2 tw-text-white tw-font-semibold">
+                        {vehicleMakesData.map((vehicleMakes, keyChildren) => {
+                            return (
+                                <div className="tw-bg-customWeakDarkBlue tw-rounded-[10px] tw-px-3 tw-py-1" key={keyChildren}><p>{vehicleMakes.Model_Name} • {`Make ${vehicleMakes.Make_Name}`} • {year}</p></div>
+                            )
+                        })}
+                    </div>
 
-                        <Button label="Go back" className="tw-mt-10" url="/" />
-                    </article>
-                </Container>
-            </section>
-        </Suspense>
+                    <Button label="Go back" className="tw-mt-10" url="/" />
+                </article>
+            </Container>
+        </section>
     )
 }

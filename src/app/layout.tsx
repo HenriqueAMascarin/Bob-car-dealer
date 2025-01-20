@@ -26,11 +26,11 @@ export default function RootLayout({
       <body className={`${InterFont.variable} antialiased tw-min-h-[100vh] tw-min-w-[100%] tw-flex tw-flex-col tw-justify-center`}>
         <Header />
         
-        <Suspense fallback={<LoadingPage />}>
-          <main className="tw-flex tw-w-full tw-flex-col tw-items-stretch tw-justify-start tw-min-h-full tw-pb-[70px] tw-flex-grow">
+        <main className="tw-flex tw-w-full tw-flex-col tw-items-stretch tw-justify-start tw-min-h-full tw-pb-[70px] tw-flex-grow">
+          <Suspense fallback={<LoadingPage />}>
             {children}
-          </main>
-        </Suspense>
+          </Suspense>
+        </main>
 
         <Footer />
       </body>

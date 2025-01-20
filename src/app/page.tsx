@@ -5,8 +5,8 @@ import Container from '@/components/Container';
 import axios from 'axios';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
-import { redirect } from 'next/navigation';
 import Form from 'next/form'
+import { useRouter } from 'next/navigation'
 
 type MakesType =
   | {
@@ -20,6 +20,8 @@ type MakesType =
 type ResponseVehicleType = { data: { Results: [] } };
 
 export default function Home() {
+  const router = useRouter();
+
   const initialSelectValue = "initial";
 
   const [vehicleMakes, changeVehicleMakes] = useState<MakesType>([]);
@@ -55,7 +57,7 @@ export default function Home() {
   function searchVehicle() {
     const vehicleMakeName = vehicleMakes.find((children) => children.MakeId.toString() == selectedVehicleMakeID)?.MakeName;
 
-    redirect(`result/${selectedVehicleMakeID}/${selectedModelYear}/${vehicleMakeName}`);
+    router.push(`result/${selectedVehicleMakeID}/${selectedModelYear}/${vehicleMakeName}`);
   }
 
   return (
