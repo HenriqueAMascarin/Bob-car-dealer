@@ -44,7 +44,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get('https://vpic.nhtsa.dot.gov/api/vehicles/GetMakesForVehicleType/car?format=json')
+      .get(`${process.env.NEXT_PUBLIC_API_ROUTE}/GetMakesForVehicleType/car?format=json`)
       .then(({ data }: ResponseVehicleType) => {
         if (data?.Results) {
           changeVehicleMakes(data.Results);
@@ -52,7 +52,9 @@ export default function Home() {
       });
   }, []);
 
-  const isDisabledNextBtn = useMemo(() => (selectedVehicleMakeID == initialSelectValue || selectedModelYear == initialSelectValue), [selectedVehicleMakeID, selectedModelYear])
+  const isDisabledNextBtn = useMemo(() => { 
+    return (selectedVehicleMakeID == initialSelectValue || selectedModelYear == initialSelectValue)
+  }, [selectedVehicleMakeID, selectedModelYear]);
 
   function searchVehicle() {
     const vehicleMakeName = vehicleMakes.find((children) => children.MakeId.toString() == selectedVehicleMakeID)?.MakeName;

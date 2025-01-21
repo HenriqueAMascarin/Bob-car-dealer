@@ -23,7 +23,7 @@ export default async function Page({ params }: {
 }) {
     const { makeId, year, makeName } = await params;
 
-    const { data }: { data: RequestType } = await axios.get(`https://vpic.nhtsa.dot.gov/api/vehicles/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}?format=json`)
+    const { data }: { data: RequestType } = await axios.get(`${process.env.NEXT_PUBLIC_API_ROUTE}/GetModelsForMakeIdYear/makeId/${makeId}/modelyear/${year}?format=json`)
 
     const { Results: vehicleMakesData }: RequestType = data;
 

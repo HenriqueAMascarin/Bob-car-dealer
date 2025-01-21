@@ -8,6 +8,7 @@
   - [Screenshot](#Screenshot)
   - [Features](#Features)
   - [Architecture](#Architecture)
+  - [Environment](#Environment)
   - [Instructions](#Instructions)
   - [Links](#Links)
   - [Technologies](#Technologies)
@@ -31,6 +32,11 @@
 - It has a components folder in the src.
 - It has a public folder that contains the images folder (with a svg folder), and the preview folder.
 - In the root of the project, there are files with configurations like tailwind.config.ts.
+
+### Environment
+
+Listed variables in .env.local
+- NEXT_PUBLIC_API_ROUTE=https://vpic.nhtsa.dot.gov/api/vehicles
 
 ### Instructions
 
